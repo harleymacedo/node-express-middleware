@@ -3,7 +3,7 @@ const registrarAtividade = (req, res, next) => {
     let hora = date.getHours();
     let minutos = date.getMinutes();
     let segundos = date.getMinutes();
-    console.log(`Atividade: ${req.url}, ${hora}:${minutos}:${segundos}`);
+    console.log(`Atividade: ${req.ip}, ${req.url}, ${hora}:${minutos}:${segundos}`);
     next();
 }
 

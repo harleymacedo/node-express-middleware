@@ -4,10 +4,13 @@ const confereHorario = require('./middlewares/horarioPermitodo');
 const registrarAtividade = require('./middlewares/logAtividade');
 
 app.use(confereHorario);
-app.use(registrarAtividade);
 
 app.get('/', (req, res) => {
     res.json({mensagem: 'App em execucao'});
+});
+
+app.get('/rota2', registrarAtividade, (req, res) => {
+    res.json({mensagem: 'App em execucao2'});
 });
 
 app.listen(3000, () => {
